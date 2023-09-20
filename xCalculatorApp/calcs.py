@@ -1,52 +1,53 @@
 from sympy import symbols, simplify, sqrt, factorial
 
+# Functions for basic mathematical operations
 
-def sumar(a, b):
+def add(a, b):
+    x, y = symbols('x y')  # Define symbolic variables "x" and "y"
+    expression = x + y  # Create an addition expression
+    result = expression.subs({x: a, y: b})  # Substitute values "a" and "b" into the expression
+    return result
+
+
+def subtract(a, b):
     x, y = symbols('x y')
-    expresion = x + y
-    resultado = expresion.subs({x: a, y: b})
-    return resultado
+    expression = x - y
+    result = expression.subs({x: a, y: b})
+    return result
 
 
-def restar(a, b):
+def multiply(a, b):
     x, y = symbols('x y')
-    expresion = x - y
-    resultado = expresion.subs({x: a, y: b})
-    return resultado
+    expression = x * y
+    result = expression.subs({x: a, y: b})
+    return result
 
 
-def multiplicar(a, b):
-    x, y = symbols('x y')
-    expresion = x * y
-    resultado = expresion.subs({x: a, y: b})
-    return resultado
-
-
-def dividir(a, b):
+def divide(a, b):
     if b == 0:
-        return "Error: División por cero"
+        return "Error: Division by zero"
     x, y = symbols('x y')
-    expresion = x / y
-    resultado = expresion.subs({x: a, y: b})
-    return resultado
+    expression = x / y
+    result = expression.subs({x: a, y: b})
+    return result
 
 
-def elevar_potencia(base, exponente):
+def raise_to_power(base, exponent):
     x, y = symbols('x y')
-    expresion = x ** y
-    resultado = expresion.subs({x: base, y: exponente})
-    return resultado
+    expression = x ** y
+    result = expression.subs({x: base, y: exponent})
+    return result
 
 
-def calcular_raiz_cuadrada(a):
+def calculate_square_root(a):
     x = symbols('x')
-    expresion = sqrt(x)
-    resultado = expresion.subs({x: a})
-    return resultado
+    expression = sqrt(x)
+    result = expression.subs({x: a})
+    return result
 
 
-def calcular_factorial(a):
+def calculate_factorial(a):
     x = symbols('x')
-    expresion = factorial(x)
-    resultado = expresion.subs({x: a})
-    return resultado
+    expression = factorial(x)
+    result = expression.subs({x: a})
+    return result
