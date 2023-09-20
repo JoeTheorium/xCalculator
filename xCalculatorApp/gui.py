@@ -1,6 +1,6 @@
 import tkinter as tk
 from sympy import sqrt, factorial
-from xCalculatorApp.calcs import (
+from calcs import (
     sumar,
     restar,
     multiplicar,
@@ -10,6 +10,7 @@ from xCalculatorApp.calcs import (
     calcular_factorial,
 )
 
+
 class xCalculator:
     def __init__(self, root):
         self.root = root
@@ -18,7 +19,8 @@ class xCalculator:
         self.result_var = tk.StringVar()
 
         # Pantalla de resultado
-        self.result_display = tk.Entry(root, textvariable=self.result_var, font=("Arial", 16), justify="right")
+        self.result_display = tk.Entry(
+            root, textvariable=self.result_var, font=("Arial", 16), justify="right")
         self.result_display.grid(row=0, column=0, columnspan=4)
 
         # Botones
@@ -31,7 +33,8 @@ class xCalculator:
         ]
 
         for (text, row, col) in button_texts:
-            button = tk.Button(root, text=text, font=("Arial", 16), command=lambda t=text: self.on_button_click(t))
+            button = tk.Button(root, text=text, font=(
+                "Arial", 16), command=lambda t=text: self.on_button_click(t))
             button.grid(row=row, column=col, padx=10, pady=10)
 
     def on_button_click(self, value):
@@ -74,10 +77,12 @@ class xCalculator:
         else:
             return "Error"
 
+
 def main():
     root = tk.Tk()
     app = xCalculator(root)
     root.mainloop()
+
 
 if __name__ == "__main__":
     main()
